@@ -1,0 +1,12 @@
+.containerTitle {
+    color: #FFFFFF;
+}
+
+.containerTitle h1 {
+    font-family: 'Josefin sans';
+    font-size: 2rem;
+    font-weight: 200;
+    margin-top: 15px;
+    margin-left: 2rem;
+    margin-bottom: 20px;
+}

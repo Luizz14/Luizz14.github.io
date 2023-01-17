@@ -1,0 +1,45 @@
+.experience {
+    width: 540px;
+    height: auto;
+    margin: 2rem;
+    margin-left: 2.5rem;
+    margin-top: 0;
+    display: inline-block;
+    vertical-align: top;
+
+    color: #FFFF;
+    font-family: 'Josefin sans';
+    text-align: justify;
+}
+
+.experienceName {
+    color: #56FFA4;
+    opacity: 0.9;
+    font-weight: 300;
+    text-align: left;
+    font-family: 'Josefin sans';
+}
+
+.experienceInformation {
+    color: #5192DF;
+    margin-left: 0.5rem;
+}
+
+.experienceLocation,
+.experienceDate {
+    display: inline-block;
+}
+
+.experienceDate {
+    color: #52D08C;
+    opacity: 0.8;
+    margin-left: 1.5rem;
+    margin-top: 10px;
+}
+
+.experienceDescription {
+    margin-left: 0.5rem;
+    margin-top: 10px;
+    font-weight: 200;
+    opacity: 0.8;
+}

@@ -1,0 +1,66 @@
+.portfolio {
+    width: 500px;
+    height: 255px;
+    padding: 2rem;
+    margin: 2rem;
+    margin-left: 2.5rem;
+    margin-right: 1rem;
+    position: relative;
+    display: inline-block;
+    
+    background-color: #15273C;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+.portfolio h1 {
+    color: #56FFA4;
+    opacity: 0.9;
+    font-family: 'Josefin sans';
+}
+
+.portfolio h2, h1 {
+    font-weight: 200;
+}
+
+.portfolioInfo {
+    margin-top: 10px;
+    margin-left: 0.5rem;
+}
+
+.portfolioInfo a {
+    color: #5192DF;
+    text-decoration: none;
+    font-weight: 400; 
+    font-size: 1.2rem;
+}
+
+.portfolioTec {
+    width: 100%;
+    height: 305px;
+    max-height: 2rem;
+    position: absolute;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-left: -2rem;
+    bottom: 0px;
+
+    text-align: center;
+    background-color: #055340;
+    border-radius: 0px 0px 10px 10px;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.portfolioTec:hover {
+    max-height: 305px;
+    border-radius: 10px;
+}
+
+.portfolioTec h1 {
+    color: #FFFFFF;
+    cursor: default;
+}
+

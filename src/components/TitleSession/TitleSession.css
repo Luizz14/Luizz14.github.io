@@ -1,0 +1,15 @@
+.titles {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.titles a{
+    font-family: 'Josefin sans' monospace;
+    display: inline-block;
+    text-decoration: none;
+    color: #FFFF;
+    margin: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
