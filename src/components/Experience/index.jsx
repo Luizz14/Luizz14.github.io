@@ -1,5 +1,5 @@
 import React from 'react'
-
+import EffectWrite from '../EffectWrite'
 import './Experience.css'
 
 const Experience = ({experienceName, experienceLocation, experienceDate, experienceDescription}) => {
@@ -17,7 +17,7 @@ const Experience = ({experienceName, experienceLocation, experienceDate, experie
                 </p>
             </div>
             <h2 className='experienceDescription'>
-                {experienceDescription}
+                <EffectWrite text={experienceDescription} seconds={1000}/>
             </h2>
         </div>
      )

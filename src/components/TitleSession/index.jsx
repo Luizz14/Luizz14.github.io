@@ -5,7 +5,7 @@ import './TitleSession.css'
 const TitleSession = ({Name}) => {
     return ( 
         <div className='titles'>
-            <a href={Name}>{Name}</a>
+            <a href={`#${Name}`}>{Name}</a>
         </div>
      )
 }

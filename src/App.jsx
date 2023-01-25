@@ -1,5 +1,5 @@
 import Header from './components/Header';
-import TitleSession from './components/TitleSession';
+import Session from './components/Session';
 import About from './components/About';
 import Title from './components/Title';
 import Experience from './components/Experience';
@@ -14,14 +14,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className='session'>
-        <TitleSession Name={'Sobre'} />
-        <TitleSession Name={'Experiências'} />
-        <TitleSession Name={'Portfolio'} />
-      </div>
+      <Session />
       <Title 
         Title={'Me chamo Luiz Gustavo,'} 
-        Id={'Sobre'}/>
+        Id={'Sobre'}
+      />
       <About />
       <Title 
         Title={'Minhas experiências profissionais e acadêmicas'} 
@@ -29,50 +26,81 @@ function App() {
       <Experience experienceName={'Frente de caixa'} 
         experienceLocation={'Restaurante Irineu’s'} 
         experienceDate={'Jun 2020 - Jul 2022'} 
-        experienceDescription={'Aos 15 anos comecei a trabalhar como caixa no restaurante de praia até os 17 anos, desenvolvi habilidades sociais ... .'}/>
+        experienceDescription={'Aos 15 anos comecei a trabalhar como caixa no restaurante de praia até os 17 anos, desenvolvi habilidades sociais ... .'}
+      />
       <Experience 
         experienceName={'Técnico em desenvolvimento de sistemas '} 
         experienceLocation={'SENAI CETAF'} 
         experienceDate={'Jan 2021 - Dez 2022'} 
-        experienceDescription={'No curso técnico de desenvolvimento de sistemas, aprendi a programar com a linguagem C# da Microsoft, utilizando também o banco de dados Sql Server, e as principais tecnologias Web como HTML, CSS e JavaScript.'}/>
+        experienceDescription={'No curso técnico de desenvolvimento de sistemas, aprendi a programar com a linguagem C# da Microsoft, utilizando também o banco de dados Sql Server, e as principais tecnologias Web como HTML, CSS e JavaScript.'}
+      />
       <Experience 
         experienceName={'Sistemas de informação '} 
         experienceLocation={'UNIT'} 
         experienceDate={'Fev 2023 - Dez 2026'} 
-        experienceDescription={'Capaz de analisar problemas reais; conceber, planejar, desenvolver e gerenciar soluções computacionais adequados ao contexto tecnológico, considerando os aspectos organizacionais e humanos, fundamentados em sólidos conhecimentos de computação.'}/>
-      <Title Title={'Skills'} />
+        experienceDescription={'Capaz de analisar problemas reais; conceber, planejar, desenvolver e gerenciar soluções computacionais adequados ao contexto tecnológico, considerando os aspectos organizacionais e humanos, fundamentados em sólidos conhecimentos de computação.'}
+      />
+      <Title Title={'Skills'}
+      Id={'Experiências'} 
+      />
       <Skills 
         skillsName={'Inglês'} 
         skillsDescription={'Fiz curso de inglês em uma escola ...'} 
-        skillsPoints={'5'}/>
+        skillsPoints={'5'}
+      />
       <Skills 
         skillsName={'Back-end'} 
         skillsDescription={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} 
-        skillsPoints={'4'}/>
+        skillsPoints={'4'}
+      />
       <Skills 
         skillsName={'Front-end'} 
         skillsDescription={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} 
-        skillsPoints={'6'}/>
+        skillsPoints={'6'}
+      />
       <Skills 
         skillsName={'Web'} 
         skillsDescription={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} 
-        skillsPoints={'6'}/>
-      <Title Title={'Portfolio'} />
+        skillsPoints={'6'}
+      />
+      <Title Title={'Portfolio'}
+      Id={'Portfolio'} />
       <Portfolio 
         portfolioName={'To-do'} 
         portfolioLink={'#'} 
         portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
-        portfolioTec={(<IconReact />, <IconDjango />)}/>
-        <Portfolio 
+        portfolioTec={(<IconReact />)}
+      />
+      <Portfolio 
         portfolioName={'Netflix'} 
         portfolioLink={'#'} 
         portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
-        portfolioTec={(<IconReact />, <IconDjango />)}/>
-        <Portfolio 
+        portfolioTec={<IconReact />}
+      />
+      <Portfolio 
         portfolioName={'Sistema de restaurante'} 
         portfolioLink={'#'} 
         portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
-        portfolioTec={(<IconReact />, <IconDjango />)}/>
+        portfolioTec={(<div>
+          <IconDjango />
+        </div>)}
+      />
+      <Portfolio 
+        portfolioName={'Game Launcher'} 
+        portfolioLink={'#'} 
+        portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
+        portfolioTec={(<div>
+          <IconReact />
+        </div>)}
+      />
+      <Portfolio 
+        portfolioName={'Sistema de gerenciamento de pousada'} 
+        portfolioLink={'#'} 
+        portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
+        portfolioTec={(<div>
+          <IconReact />
+        </div>)}
+      />
     </div>
   );
 }

@@ -5,6 +5,13 @@ import './Portfolio.css'
 const Portfolio = ({portfolioName, portfolioLink, portfolioDescription, portfolioTec}) => {
     return ( 
         <div className='portfolio'>
+            <div className="portfolioDevelopment" style={{
+                // display: {'none'}
+            }}>
+                    <p>
+                        Em desenvolvimento
+                    </p>
+            </div>
             <h1>
                 {portfolioName}
             </h1>
@@ -18,11 +25,8 @@ const Portfolio = ({portfolioName, portfolioLink, portfolioDescription, portfoli
                 <h1>
                     Tecnologias usadas
                 </h1>
-                <div className="portfolioFrameworks">
-                {/* {originalsMovie.map((item, key) => (
-            <FeaturedMovieRow key={key} title={item.title} items={item.items} />
-          ))} */}
-                   {portfolioTec.map}
+            <div className="portfolioFrameworks">
+                   {portfolioTec}
                 </div>
             </div>
         </div>
