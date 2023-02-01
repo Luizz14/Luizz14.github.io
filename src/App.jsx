@@ -8,15 +8,27 @@ import Portfolio from './components/Portfolio';
 import IconReact from './components/IconsTec/IconReact';
 import IconDjango from './components/IconsTec/IconDjango';
 
+import Linguage from './Linguage';
+
 import './App.css';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [language, setLanguage] = useState([]);
+
+    useEffect(() => {
+        Linguage.getLanguage().then(data => {
+            setLanguage(data);
+        });
+    }, []);
+
   return (
     <div className="App">
       <Header />
       <Session />
       <Title 
-        Title={'Me chamo Luiz Gustavo,'} 
+        Title={`Me chamo Luiz Gustavo,`}
         Id={'Sobre'}
       />
       <About />
@@ -50,7 +62,7 @@ function App() {
       />
       <Skills 
         skillsName={'Back-end'} 
-        skillsDescription={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} 
+        skillsDescription={''}
         skillsPoints={'4'}
       />
       <Skills 
@@ -67,25 +79,26 @@ function App() {
       Id={'Portfolio'} />
       <Portfolio 
         portfolioName={'To-do'} 
-        portfolioLink={'#'} 
-        portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
+        portfolioLink={'https://github.com/Luizz14/To-do'} 
+        portfolioDescription={'Uma simples aplicacao react onde pode adicionar, remover afazerez, e consumindo de uma API externa.'} 
         portfolioTec={(<IconReact />)}
       />
       <Portfolio 
         portfolioName={'Netflix'} 
-        portfolioLink={'#'} 
+        portfolioLink={'https://github.com/Luizz14/Lufix'} 
         portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
         portfolioTec={<IconReact />}
       />
       <Portfolio 
         portfolioName={'Sistema de restaurante'} 
-        portfolioLink={'#'} 
+        portfolioLink={'https://github.com/Luizz14/Sistema-de-Restaurante'} 
         portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
         portfolioTec={(<div>
           <IconDjango />
         </div>)}
       />
       <Portfolio 
+        portfolioDevelopment={'Development'}
         portfolioName={'Game Launcher'} 
         portfolioLink={'#'} 
         portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
@@ -94,6 +107,7 @@ function App() {
         </div>)}
       />
       <Portfolio 
+        portfolioDevelopment={'Development'}
         portfolioName={'Sistema de gerenciamento de pousada'} 
         portfolioLink={'#'} 
         portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
@@ -101,6 +115,7 @@ function App() {
           <IconReact />
         </div>)}
       />
+      {/* <Language /> */}
     </div>
   );
 }

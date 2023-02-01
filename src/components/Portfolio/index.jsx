@@ -2,21 +2,29 @@ import React from 'react'
 
 import './Portfolio.css'
 
-const Portfolio = ({portfolioName, portfolioLink, portfolioDescription, portfolioTec}) => {
+const Portfolio = ({portfolioName, portfolioLink, portfolioDescription, portfolioTec, portfolioDevelopment}) => {
     return ( 
         <div className='portfolio'>
-            <div className="portfolioDevelopment" style={{
-                // display: {'none'}
-            }}>
-                    <p>
-                        Em desenvolvimento
-                    </p>
+            <div className="portfolioDevelopment"
+                style={{
+                    display: portfolioDevelopment ? 'block' : 'none'
+                }}
+            >
+                <p>
+                    Em desenvolvimento
+                </p>
             </div>
             <h1>
                 {portfolioName}
             </h1>
             <div className="portfolioInfo">
-                <a href={portfolioLink}>Link</a>
+                <a href={portfolioLink}
+                    style={{
+                        display: portfolioDevelopment ? 'none' : 'block'
+                    }}
+                >
+                    Repositório
+                </a>
                 <h2>
                     {portfolioDescription}
                 </h2>
