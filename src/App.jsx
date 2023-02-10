@@ -13,12 +13,34 @@ import Linguage from './Linguage';
 import './App.css';
 import { useEffect, useState } from 'react';
 
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDZe15oS0C0lJeQfo7MyGOkQqDPRT7i9vU",
+//   authDomain: "portfolio-ea088.firebaseapp.com",
+//   projectId: "portfolio-ea088",
+//   storageBucket: "portfolio-ea088.appspot.com",
+//   messagingSenderId: "844726668401",
+//   appId: "1:844726668401:web:e09f339399845caaf45fd0",
+//   measurementId: "G-MVE9FRS88D"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+
 function App() {
 
   const [language, setLanguage] = useState([]);
 
     useEffect(() => {
-        Linguage.getLanguage().then(data => {
+        Linguage.getHeader().then(data => {
             setLanguage(data);
         });
     }, []);
@@ -60,11 +82,19 @@ function App() {
         skillsDescription={'Fiz curso de inglês em uma escola ...'} 
         skillsPoints={'5'}
       />
-      <Skills 
+      {/* {language.map((item, key) => (
+          <Skills 
+            key={key}
+            skillsName={'Back-end'} 
+            skillsDescription={item.Sobre}
+            skillsPoints={'4'}
+          />
+      ))} */}
+      {/* <Skills 
         skillsName={'Back-end'} 
-        skillsDescription={''}
+        skillsDescription={language}
         skillsPoints={'4'}
-      />
+      /> */}
       <Skills 
         skillsName={'Front-end'} 
         skillsDescription={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} 

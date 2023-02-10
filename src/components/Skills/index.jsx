@@ -3,6 +3,7 @@ import React from 'react'
 import './Skills.css'
 
 const Skills = ({skillsName, skillsDescription, skillsPoints}) => {
+
     return (
         <div className='skills'>
             <div className="skillsHeader">
@@ -24,7 +25,6 @@ const Skills = ({skillsName, skillsDescription, skillsPoints}) => {
                     </p>
                 </div>
             </div>
-
             <h2 className='skillsDescription'>
                 {skillsDescription}
             </h2>
