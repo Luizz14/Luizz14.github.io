@@ -66,7 +66,7 @@ export default {
             {
                 SkillsName: 'Inglês',
                 Points: '5',
-                Discription: 'Fiz curso de inglês em uma escola ..',
+                Discription: 'Fiz curso de inglês e atualmente estou no nível B2',
             },
             {
                 SkillsName: 'Back-end',

@@ -37,13 +37,25 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [language, setLanguage] = useState([]);
+  const [language, setLanguage] = useState([])
+  const [skills, setSkills] = useState([])
+  const [portfolio, setPortfolio] = useState([])
 
     useEffect(() => {
         Linguage.getHeader().then(data => {
-            setLanguage(data);
-        });
-    }, []);
+            setLanguage(data)
+        })
+
+        Linguage.getSkills().then(data => {
+          setSkills(data)
+        })
+
+        Linguage.getPortfolio().then(data => {
+          setPortfolio(data)
+        })
+
+        Linguage.getExperience
+    }, [])
 
   return (
     <div className="App">
@@ -62,90 +74,32 @@ function App() {
         experienceDate={'Jun 2020 - Jul 2022'} 
         experienceDescription={'Aos 15 anos comecei a trabalhar como caixa no restaurante de praia até os 17 anos, desenvolvi habilidades sociais ... .'}
       />
-      <Experience 
-        experienceName={'Técnico em desenvolvimento de sistemas '} 
-        experienceLocation={'SENAI CETAF'} 
-        experienceDate={'Jan 2021 - Dez 2022'} 
-        experienceDescription={'No curso técnico de desenvolvimento de sistemas, aprendi a programar com a linguagem C# da Microsoft, utilizando também o banco de dados Sql Server, e as principais tecnologias Web como HTML, CSS e JavaScript.'}
-      />
-      <Experience 
-        experienceName={'Sistemas de informação '} 
-        experienceLocation={'UNIT'} 
-        experienceDate={'Fev 2023 - Dez 2026'} 
-        experienceDescription={'Capaz de analisar problemas reais; conceber, planejar, desenvolver e gerenciar soluções computacionais adequados ao contexto tecnológico, considerando os aspectos organizacionais e humanos, fundamentados em sólidos conhecimentos de computação.'}
-      />
+      
+      {}
+
       <Title Title={'Skills'}
       Id={'Experiências'} 
       />
-      <Skills 
-        skillsName={'Inglês'} 
-        skillsDescription={'Fiz curso de inglês em uma escola ...'} 
-        skillsPoints={'5'}
-      />
-      {/* {language.map((item, key) => (
-          <Skills 
-            key={key}
-            skillsName={'Back-end'} 
-            skillsDescription={item.Sobre}
-            skillsPoints={'4'}
-          />
-      ))} */}
-      {/* <Skills 
-        skillsName={'Back-end'} 
-        skillsDescription={language}
-        skillsPoints={'4'}
-      /> */}
-      <Skills 
-        skillsName={'Front-end'} 
-        skillsDescription={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} 
-        skillsPoints={'6'}
-      />
-      <Skills 
-        skillsName={'Web'} 
-        skillsDescription={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} 
-        skillsPoints={'6'}
-      />
+
+      {skills.map((item, key) => (
+        <Skills 
+          key={key}
+          skillsName={item.SkillsName} 
+          skillsDescription={item.Discription}
+          skillsPoints={item.Points}
+        />
+      ))}
       <Title Title={'Portfolio'}
       Id={'Portfolio'} />
-      <Portfolio 
-        portfolioName={'To-do'} 
-        portfolioLink={'https://github.com/Luizz14/To-do'} 
-        portfolioDescription={'Uma simples aplicacao react onde pode adicionar, remover afazerez, e consumindo de uma API externa.'} 
+      {portfolio.map((item, key) => (
+        <Portfolio 
+        key={key}
+        portfolioName={item.PortfolioName} 
+        portfolioLink={item.Repository} 
+        portfolioDescription={item.Discription} 
         portfolioTec={(<IconReact />)}
       />
-      <Portfolio 
-        portfolioName={'Netflix'} 
-        portfolioLink={'https://github.com/Luizz14/Lufix'} 
-        portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
-        portfolioTec={<IconReact />}
-      />
-      <Portfolio 
-        portfolioName={'Sistema de restaurante'} 
-        portfolioLink={'https://github.com/Luizz14/Sistema-de-Restaurante'} 
-        portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
-        portfolioTec={(<div>
-          <IconDjango />
-        </div>)}
-      />
-      <Portfolio 
-        portfolioDevelopment={'Development'}
-        portfolioName={'Game Launcher'} 
-        portfolioLink={'#'} 
-        portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
-        portfolioTec={(<div>
-          <IconReact />
-        </div>)}
-      />
-      <Portfolio 
-        portfolioDevelopment={'Development'}
-        portfolioName={'Sistema de gerenciamento de pousada'} 
-        portfolioLink={'#'} 
-        portfolioDescription={'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} 
-        portfolioTec={(<div>
-          <IconReact />
-        </div>)}
-      />
-      {/* <Language /> */}
+      ))}
     </div>
   );
 }
