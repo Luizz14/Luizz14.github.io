@@ -1,5 +1,16 @@
 .session {
-    display: flex;
-    width: 50%;
+    display: inline-block;
     margin: auto;
+    width: 30%;
+}
+
+.session a {
+    display: flex;
+    justify-content: center;
+    font-family: 'Josefin sans' monospace;
+    text-decoration: none;
+    color: #FFFF;
+    margin: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }

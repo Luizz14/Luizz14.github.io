@@ -9,6 +9,7 @@ import IconReact from './components/IconsTec/IconReact';
 import IconDjango from './components/IconsTec/IconDjango';
 
 import Linguage from './Linguage';
+import English from './English';
 
 import './App.css';
 import { useEffect, useState } from 'react';
@@ -37,30 +38,45 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [language, setLanguage] = useState([])
+  const [language, setLanguage] = useState(English)
   const [skills, setSkills] = useState([])
   const [portfolio, setPortfolio] = useState([])
+  const [experience, setExperience] = useState([])
+  const [session, setSession] = useState([])
+
+  // useEffect(() => {
+  //     setLanguage(Linguage)
+  // }, [])
 
     useEffect(() => {
-        Linguage.getHeader().then(data => {
-            setLanguage(data)
-        })
-
-        Linguage.getSkills().then(data => {
+        language.getSkills().then(data => {
           setSkills(data)
         })
 
-        Linguage.getPortfolio().then(data => {
+        language.getPortfolio().then(data => {
           setPortfolio(data)
         })
 
-        Linguage.getExperience
+        language.getExperience().then(data => {
+          setExperience(data)
+        })
+
+        language.getSessions().then(data => {
+          setSession(data)
+        })
     }, [])
 
   return (
     <div className="App">
       <Header />
-      <Session />
+
+      {session.map((item, key) => (
+        <Session
+          key={key}
+          NameSession={item.SessionsName}
+        />
+      ))}
+
       <Title 
         Title={`Me chamo Luiz Gustavo,`}
         Id={'Sobre'}
@@ -69,13 +85,16 @@ function App() {
       <Title 
         Title={'Minhas experiências profissionais e acadêmicas'} 
         Id={'Sobre'}/>
-      <Experience experienceName={'Frente de caixa'} 
-        experienceLocation={'Restaurante Irineu’s'} 
-        experienceDate={'Jun 2020 - Jul 2022'} 
-        experienceDescription={'Aos 15 anos comecei a trabalhar como caixa no restaurante de praia até os 17 anos, desenvolvi habilidades sociais ... .'}
-      />
       
-      {}
+      {experience.map((item, key) => (
+        <Experience 
+          key={key}
+          experienceName={item.ExperienceName}
+          experienceLocation={item.Location}
+          experienceDate={item.Duration}
+          experienceDescription={item.Discription}
+        />
+      ))}
 
       <Title Title={'Skills'}
       Id={'Experiências'} 
