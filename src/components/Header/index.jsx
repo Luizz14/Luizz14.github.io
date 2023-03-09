@@ -7,7 +7,7 @@ import IconPerfil from '../IconPerfil'
 
 import wood from "../../images/backgroundWood.jpg"
 
-const Header = () => {
+const Header = ({TextHeader}) => {
 
     const EffectWriteHeader = (props) => {
         const [text, setText] = useState('')
@@ -39,7 +39,7 @@ const Header = () => {
         }}
         >
             <div>
-                <EffectWriteHeader  text='Olá, Eu sou Gustavo' />
+                <EffectWriteHeader  text={TextHeader} />
             </div>
             
             <IconPerfil />

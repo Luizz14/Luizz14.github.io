@@ -39,10 +39,11 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const [language, setLanguage] = useState(English)
+  const [header, setHeader] = useState([])
+  const [session, setSession] = useState([])
+  const [experience, setExperience] = useState([])
   const [skills, setSkills] = useState([])
   const [portfolio, setPortfolio] = useState([])
-  const [experience, setExperience] = useState([])
-  const [session, setSession] = useState([])
 
   // useEffect(() => {
   //     setLanguage(Linguage)
@@ -64,11 +65,20 @@ function App() {
         language.getSessions().then(data => {
           setSession(data)
         })
+
+        language.getHeader().then(data => {
+          setHeader(data)
+        })
     }, [])
 
   return (
     <div className="App">
-      <Header />
+      {header.map((item, key) => (
+        <Header
+          key={key}
+          TextHeader={item.HeaderTitle}
+        />
+      ))}
 
       {session.map((item, key) => (
         <Session
@@ -81,7 +91,9 @@ function App() {
         Title={`Me chamo Luiz Gustavo,`}
         Id={'Sobre'}
       />
+      
       <About />
+
       <Title 
         Title={'Minhas experiências profissionais e acadêmicas'} 
         Id={'Sobre'}/>
@@ -108,8 +120,10 @@ function App() {
           skillsPoints={item.Points}
         />
       ))}
+
       <Title Title={'Portfolio'}
       Id={'Portfolio'} />
+      
       {portfolio.map((item, key) => (
         <Portfolio 
         key={key}
